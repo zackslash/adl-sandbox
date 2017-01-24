@@ -1,0 +1,6 @@
+export CUBEX_DOMAIN=cubex-local.com
+export CUBEX_DISCOVERY_PORT=50056
+export CUBEX_IMPERIUM_PORT=50055
+export CUBEX_REGISTRY_PORT=50058
+export FIDENT_LOCATION=fident.cubex-local.com
+export FIDENT_PORT=50057

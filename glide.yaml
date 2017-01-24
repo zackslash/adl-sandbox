@@ -1,0 +1,10 @@
+package: github.com/cubex/seed-service-go
+import:
+- package: github.com/cubex/portcullis-go
+- package: github.com/cubex/potens-go
+- package: github.com/cubex/proto-go
+- package: github.com/golang/protobuf
+  subpackages:
+  - proto
+- package: google.golang.org/grpc
+  version: v1.0.x

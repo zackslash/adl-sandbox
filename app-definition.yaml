@@ -1,0 +1,97 @@
+##########################
+# SAMPLE DEFINITION FILE #
+##########################
+
+type: cubex.platform.application
+config_version: 1.0
+
+#######################
+#    Required Info    #
+#######################
+
+#The version of your application
+version: 1.0
+
+#Your vendor ID
+vendor: your-vendor-id
+
+#ID of your app
+app_id: seed-application
+
+#Category to place this app in
+category: other
+
+#######################
+# Display Information #
+#######################
+
+#Display name for your app
+name:
+  en: Example
+  fr: Exemple
+
+#Description of the app, shown with the app in menus and summaries
+description:
+  en: Example of how to build a Cubex platform application
+  fr: Exemple de construction d'une application de plateforme Cubex
+
+#fort-icon value, can be iron icon name, eg. icons:3d_rotation, or an svg
+icon: icons:build
+
+#######################
+#     Navigation      #
+#######################
+navigation:
+  - id: list-things
+    # Menu Item Text
+    name:
+      en: List of Things
+      fr: Liste des choses
+    # Menu Item Help Text (e.g. Tooltip, Sub Header)
+    description:
+      en: A nice list of things to look at
+      fr: Une belle liste de choses à regarder
+    #fort-icon value, can be iron icon name, eg. icons:3d_rotation, or an svg
+    icon: icons:list
+    #Path to follow (relative to your application)
+    path: /
+
+integrations:
+  #Page Header Navigation Items
+  header_menu_items:
+      #ID for this menu item
+    - id: details
+      #Path to integrate into
+      hook: your-vendor-id/seed-application/:fid
+      #Path to link to on click
+      path: :fid/details
+      #Text to display on menu
+      title:
+        en: Details
+        fr: Détails
+      #Hover text for menu item
+      description:
+        en: Details of a thing
+        fr: Détails d'une chose
+
+  #Page Header Navigation Items
+  header_actions:
+      #ID for this action
+    - id: land-thing
+      #Path to integrate into
+      hook: your-vendor-id/seed-application/:fid
+      #Path to link to on click
+      path: thing/:fid/land
+      #Action text
+      title:
+        en: Land Thing
+        fr: Chose terre
+      #Action hover text
+      description:
+        en: Land this thing on the ground
+        fr: Placer cette chose sur le sol
+      #Launch style (page, dialog, window, pagelet)
+      mode: dialog
+      #Icon to display
+      icon: icons:flight-land
+
