@@ -1,8 +1,8 @@
 hash: c7dac16c2c055c8b709e22490d7eab9a37de00a6b972fe20043db0ce5142116e
-updated: 2017-01-24T16:03:42.994729767Z
+updated: 2017-01-25T11:26:20.65927369Z
 imports:
 - name: github.com/apache/thrift
-  version: 55f976e0decefb284b0f0a459745dd57f038ab4f
+  version: 3d6e2a507159e51d486e4e2674a1dca5fc227279
   subpackages:
   - lib/go/thrift
 - name: github.com/cubex/portcullis-go
@@ -10,7 +10,7 @@ imports:
   subpackages:
   - keys
 - name: github.com/cubex/potens-go
-  version: f2c34f8c51a35018f9efffc6e0325cda3cbea346
+  version: 340185dc83b24eac3917d36c7ebd5d3747292480
   subpackages:
   - adl
   - application
@@ -116,5 +116,5 @@ imports:
   - tap
   - transport
 - name: gopkg.in/yaml.v2
-  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
+  version: 14227de293ca979cf205cd88769fe71ed96a97e2
 testImports: []
