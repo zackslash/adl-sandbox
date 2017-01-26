@@ -77,5 +77,5 @@ func (s *server) HandleSocketAction(ctx context.Context, in *applications.Socket
 }
 
 func (s *server) ModifyRelationship(context.Context, *applications.ProjectModifyRequest) (*applications.ProjectModifyResponse, error) {
-	return nil, errors.New("Sockets not supported")
+	return &applications.ProjectModifyResponse{Success:true}, nil
 }
