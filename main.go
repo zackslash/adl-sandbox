@@ -1,20 +1,16 @@
 package main
 
 import (
-	"golang.org/x/net/context"
-
-	"github.com/cubex/proto-go/platform"
-
+	"errors"
 	"flag"
-
 	"os"
 	"os/signal"
 
-	"errors"
-
+	"github.com/cubex/potens-go/application"
+	"github.com/cubex/proto-go/applications"
 	zipkin "github.com/openzipkin/zipkin-go-opentracing"
 	"github.com/uber-go/zap"
-	"github.com/cubex/potens-go/application"
+	"golang.org/x/net/context"
 )
 
 type server struct{}
@@ -58,7 +54,7 @@ func main() {
 	/*
 	 * Start up your service here
 	 */
-	platform.RegisterCubexPlatformServer(grpcServer, &server{})
+	applications.RegisterApplicationServer(grpcServer, &server{})
 
 	//Mark service as online and start heart beat
 	err = app.Online()
@@ -87,10 +83,10 @@ func main() {
 }
 
 // HandleHTTPRequest handles requests from HTTP sources
-func (s *server) HandleHTTPRequest(ctx context.Context, in *platform.HTTPRequest) (*platform.HTTPResponse, error) {
-	if in.RequestType == platform.HTTPRequest_PAGE_DEFINITION {
+func (s *server) HandleHTTPRequest(ctx context.Context, in *applications.HTTPRequest) (*applications.HTTPResponse, error) {
+	if in.RequestType == applications.HTTPRequest_PAGE_DEFINITION {
 		return s.PageDefinition(ctx, in)
-	} else if in.RequestType == platform.HTTPRequest_REQUEST {
+	} else if in.RequestType == applications.HTTPRequest_REQUEST {
 		return s.HTTPResource(ctx, in)
 	}
 

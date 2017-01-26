@@ -4,20 +4,19 @@ import (
 	"bytes"
 	"errors"
 	"html/template"
-
-	"golang.org/x/net/context"
+	"os"
+	"regexp"
+	"strings"
 
 	"github.com/cubex/portcullis-go"
 	"github.com/cubex/potens-go/webui"
 	"github.com/cubex/potens-go/webui/breadcrumb"
-	"github.com/cubex/proto-go/platform"
+	"github.com/cubex/proto-go/applications"
 	"github.com/uber-go/zap"
-	"strings"
-	"os"
-	"regexp"
+	"golang.org/x/net/context"
 )
 
-func (s *server) PageDefinition(ctx context.Context, in *platform.HTTPRequest) (*platform.HTTPResponse, error) {
+func (s *server) PageDefinition(ctx context.Context, in *applications.HTTPRequest) (*applications.HTTPResponse, error) {
 	//Retrieve auth data
 	response := webui.CreateResponse()
 	authData := portcullis.FromContext(ctx)
@@ -53,7 +52,7 @@ func (s *server) PageDefinition(ctx context.Context, in *platform.HTTPRequest) (
 }
 
 // HandleHTTPRequest handles requests from HTTP sources
-func (s *server) HTTPResource(ctx context.Context, in *platform.HTTPRequest) (*platform.HTTPResponse, error) {
+func (s *server) HTTPResource(ctx context.Context, in *applications.HTTPRequest) (*applications.HTTPResponse, error) {
 	//Retrieve auth data
 	response := webui.CreateResponse()
 
@@ -73,6 +72,10 @@ func (s *server) HTTPResource(ctx context.Context, in *platform.HTTPRequest) (*p
 	return response, nil
 }
 
-func (s *server) HandleSocketAction(ctx context.Context, in *platform.SocketRequest) (*platform.HTTPResponse, error) {
+func (s *server) HandleSocketAction(ctx context.Context, in *applications.SocketRequest) (*applications.HTTPResponse, error) {
+	return nil, errors.New("Sockets not supported")
+}
+
+func (s *server) ModifyRelationship(context.Context, *applications.ProjectModifyRequest) (*applications.ProjectModifyResponse, error) {
 	return nil, errors.New("Sockets not supported")
 }

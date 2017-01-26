@@ -1,8 +1,8 @@
 hash: c7dac16c2c055c8b709e22490d7eab9a37de00a6b972fe20043db0ce5142116e
-updated: 2017-01-25T11:26:20.65927369Z
+updated: 2017-01-26T15:25:29.183321264Z
 imports:
 - name: github.com/apache/thrift
-  version: 3d6e2a507159e51d486e4e2674a1dca5fc227279
+  version: 71eba643ddc10bd2a9f614348567bfc1f63d8d06
   subpackages:
   - lib/go/thrift
 - name: github.com/cubex/portcullis-go
@@ -10,7 +10,7 @@ imports:
   subpackages:
   - keys
 - name: github.com/cubex/potens-go
-  version: 340185dc83b24eac3917d36c7ebd5d3747292480
+  version: 1744aa0b7225c1673392aea069e2df34e51b5f35
   subpackages:
   - adl
   - application
@@ -21,12 +21,12 @@ imports:
   - webui
   - webui/breadcrumb
 - name: github.com/cubex/proto-go
-  version: 005850890462a8ad5c27827279f7f05b01adfca0
+  version: af82f03036b8ce030cabae46074144cf1e86250b
   subpackages:
   - adl
+  - applications
   - discovery
   - imperium
-  - platform
   - undercroft
 - name: github.com/davecgh/go-spew
   version: 346938d642f2ec3594ed81d874461961cd0faa76
@@ -49,7 +49,7 @@ imports:
 - name: github.com/go-logfmt/logfmt
   version: 390ab7935ee28ec6b286364bba9b4dd6410cb3d5
 - name: github.com/gogo/protobuf
-  version: 265e960d45b331a5055057ef0f29088cf1eb91ce
+  version: fb8a359905af6e2b6517cccda0ba25915322ee88
   subpackages:
   - proto
 - name: github.com/golang/protobuf
@@ -116,5 +116,5 @@ imports:
   - tap
   - transport
 - name: gopkg.in/yaml.v2
-  version: 14227de293ca979cf205cd88769fe71ed96a97e2
+  version: 4c78c975fe7c825c6d1466c42be594d1d6f3aba6
 testImports: []
