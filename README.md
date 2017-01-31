@@ -1,12 +1,7 @@
-# seed-application
-Seed Application
+# ADL Sandbox
+ADL test/sandbox application for cubex framework (for local-platform tests only)
 
-#For local development
+
+```bash
 source export.sh
-
-
-git remote add seed git@github.com:cubex/seed-application.git
-
-git pull seed master:master
-
-git reset $(git commit-tree HEAD^{tree} -m "seed commit")
+```
