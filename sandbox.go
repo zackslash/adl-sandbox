@@ -33,6 +33,7 @@ func runSandbox(count int) {
 	ent1.AddListItem(testListName, "2", "TWO")
 	ent1.AddListItem(testListName, "3", "THREE")
 	ent1.AddListItem(testListName, "4", "FOUR")
+	//ent1.RemoveListItem(testListName, "3")
 
 	//ent1.IncrementCounter("propX")
 	ent1.Write("propY", "This is Y data")
@@ -43,13 +44,13 @@ func runSandbox(count int) {
 	//adl.ListRange(testListName, "1", "", 0)
 	//adl.Property("propX")
 
-	ent1.Read(adl.PropertiesWithPrefix("prop"), adl.Meta("propX"), adl.Set("propX"))
+	ent1.Read(adl.PropertiesWithPrefix("prop"), adl.Meta("propX"), adl.Set("propX"), adl.ListItem(testListName, "1"))
 	dataA := ent1.Get("propX")
 	//countA = ent1.GetCounter("propX")
 	data3 := ent1.GetSet("propX")
 	data4 := ent1.Get("propY")
 	meta1 := ent1.GetMeta("propX")
-	//list := ent1.GetList(testListName)
+	list := ent1.GetList(testListName)
 
 	fmt.Printf("\nItem:%s-%s-%s\n", dataA, data4, meta1)
 	//fmt.Printf("Counter:%d\n", countA)
@@ -62,11 +63,11 @@ func runSandbox(count int) {
 		fmt.Printf("No set items returned\n")
 	}
 
-	/*for _, d := range list {
+	for _, d := range list {
 		fmt.Printf("LIST-ITEM:%s - %s\n", d.Key, d.Value)
 	}
 
 	if len(list) == 0 {
 		fmt.Printf("No list items returned\n")
-	}*/
+	}
 }
