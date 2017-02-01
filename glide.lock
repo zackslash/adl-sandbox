@@ -1,5 +1,5 @@
 hash: c7dac16c2c055c8b709e22490d7eab9a37de00a6b972fe20043db0ce5142116e
-updated: 2017-01-26T15:25:29.183321264Z
+updated: 2017-01-31T15:36:25.829920719Z
 imports:
 - name: github.com/apache/thrift
   version: 71eba643ddc10bd2a9f614348567bfc1f63d8d06
@@ -14,17 +14,17 @@ imports:
   subpackages:
   - adl
   - application
-  - category
+  - webui
+  - webui/breadcrumb
   - definition
   - i18n
   - identity
-  - webui
-  - webui/breadcrumb
+  - category
 - name: github.com/cubex/proto-go
-  version: af82f03036b8ce030cabae46074144cf1e86250b
+  version: ca699655c72e17e64550b39c40ddc1745894ba0e
   subpackages:
-  - adl
   - applications
+  - adl
   - discovery
   - imperium
   - undercroft
@@ -97,24 +97,24 @@ imports:
   subpackages:
   - context
   - http2
+  - trace
   - http2/hpack
   - idna
-  - internal/timeseries
   - lex/httplex
-  - trace
+  - internal/timeseries
 - name: google.golang.org/grpc
   version: 708a7f9f3283aa2d4f6132d287d78683babe55c8
   subpackages:
-  - codes
+  - metadata
   - credentials
+  - codes
   - grpclog
   - internal
-  - metadata
   - naming
-  - peer
   - stats
   - tap
   - transport
+  - peer
 - name: gopkg.in/yaml.v2
   version: 4c78c975fe7c825c6d1466c42be594d1d6f3aba6
 testImports: []
