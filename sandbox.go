@@ -36,9 +36,10 @@ func runSandbox(count int) {
 	ent1.Commit()
 
 	//adl.Counter("propX"),
+	//adl.ListRange(testListName, "1", "", 0)
 	//adl.Property("propX")
 
-	ent1.Read(adl.PropertiesWithPrefix("prop"), adl.Meta("propX"), adl.Set("propX"), adl.ListRange(testListName, "0", "4", 10))
+	ent1.Read(adl.PropertiesWithPrefix("prop"), adl.Meta("propX"), adl.Set("propX"), adl.ListRange(testListName, "1", "3", 0), adl.ListItem(testListName, "4"))
 	dataA := ent1.Get("propX")
 	//countA = ent1.GetCounter("propX")
 	data3 := ent1.GetSet("propX")
